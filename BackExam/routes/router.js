@@ -37,24 +37,13 @@ router.post('/addfeedback',async (req,res)=>{
         try{
         const item = req.body;
         const data = new courseModel(data);
-                await counterdata.save();
+                await data.save();
         res.status(200).send({message:'Added'});
         } catch (error) {
         res.status(404).send({message:'Add Unsuccessful'});
         }
   });
 
-// router.put('/select-course/:id',async (req,res)=>{ 
-//   try{
-    
-//   const Event = await userModel.findByIdAndUpdate(req.params.id,{approved:true});
-//   console.log(Event);
-  
-//   res.status(200).send({message:'Success'});
-//   } catch (error){
-//     res.send({message:' not found'});
-//   }
-// });
 
 router.put('/edit/:id', async (req, res) => {
     try {
